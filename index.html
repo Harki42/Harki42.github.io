@@ -1,0 +1,232 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Rakhraj Dials</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="navTop">
+            <div class="navItem">
+                <img src="./img/rakhrajdialslogo.png" height="100" alt="">
+            </div>
+        </div>
+        <div class="navBottom">
+            <h3 class="menuItem">Custom Dials</h3>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <div class="bannerContent">
+            <div class="bannerText">
+                <h1 class="bannerTitle">Customized <br> Laser-Annealed<br>Titanium Watch Dials</h1>
+                <h2 class="bannerPrice">Now Only <br> $129.99!</h2>
+                <button class="buyButton">Customize Yours Today!</button>
+            </div>
+            <img src="./img/banner1.png" alt="" class="bannerImage">
+        </div>
+    </div>
+        
+    <div class="features">
+        <div class="feature">
+            <img src="./img/shipping.png" alt="" class="featureImage">
+            <span class="featureTitle">Free Shipping!</span>
+            <span class="featureDescription">Free Worldwide Shipping on all orders above $300.</span>
+        </div>
+        <div class="feature">
+            <img src="./img/return.png" alt="" class="featureImage">
+            <span class="featureTitle">30 Day Returns!</span>
+            <span class="featureDescription">No questions asked returns and refunds within 30 days.</span>
+        </div>
+        <div class="feature">
+            <img src="./img/gift.png" alt="" class="featureImage">
+            <span class="featureTitle">Perfect for Gifting!</span>
+            <span class="featureDescription">Surprise Your Closed Ones with a Personalized Watch Dial.</span>
+        </div>
+        <div class="feature">
+            <img src="./img/contact.png" alt="" class="featureImage">
+            <span class="featureTitle">Contact Us!</span>
+            <span class="featureDescription">Please Keep in Touch via Email and our Support System.</span>
+        </div>
+    </div>
+
+
+    <div class="dialcustomizationtitle">
+        <h1 class="dialTitle">Customize Your Watch Dial!</h1>
+        <h2 class="dialPrice">Starting at $129.99</h2>
+        <p class="dialDescription">Choose your Perfect Comination of Dial Color & Hour / Minute Indicies, With the
+            Option of Customized Logos for Every Occasion.</p>
+    </div>
+    
+    <div class="dialPreviewTop">
+        <h1 class="dialPreviewTop">-</h1>
+    </div>
+
+    <div class="dialPreviewContainer">
+<!-- Dial Preview -->
+        <div class="dialPreview">
+            <img id="dialBaseImage" src="./img/dial1.png" alt="Dial Preview" class="dialImage">
+            <img id="dialMovementOverlay" src="" alt="" class="dialOverlay" style="display:none;">
+            <img id="dialDesignOverlay" src="" alt="" class="dialOverlay" style="display:none;">
+            <img id="dialIndexOverlay" src="" alt="" class="dialOverlay" style="display:none;">
+            <img id="dialCaseOverlay" src="./img/dialcase.png" alt="Dial Case Overlay" class="dialOverlay">
+        </div>
+        
+    
+<!-- Dial Customization Options -->
+        <div class="dialcustomization">
+    <!-- Dial Sizes -->
+            <div class="dialsizestitles">
+                <button class="dialsizestitle">Choose the Diameter of Your Watch Dial!</button>
+            </div>
+            <div class="dialsizes">
+                <button class="dialsize" data-category="size" data-value="36mm">36mm</button>
+                <button class="dialsize" data-category="size" data-value="41mm">41mm</button>
+                <button class="dialsize" data-category="size" data-value="custom">Custom Size</button>
+                <div class="customSizeSection" style="display: none;">
+                    <label for="dialDiameter">Dial Diameter ( 20 - 50 millimeters):</label>
+                    <div class="dialDiameterWrapper">
+                        <input type="number" id="dialDiameter" class="dialDiameterInput" placeholder="Enter size" min="20" max="50" step="0.1">
+                        <span>mm</span>
+                    </div>
+                
+                    <label for="additionalComments">Additional Comments:</label>
+                    <textarea id="additionalComments" class="commentsInput" placeholder="Add any details here..."></textarea>
+                
+                    <label for="uploadDialShape">Upload Dial Shape:</label>
+                    <input type="file" id="uploadDialShape" class="dialShapeUpload" accept=".jpg,.png,.svg">
+                
+                    <button id="saveCustomSize" class="saveButton">Save and Continue</button>
+                </div>
+                
+    <!-- Dial Movements -->
+            </div>
+            <div class="dialmovementstitles">
+                <button class="dialmovementstitle">Choose the Movement!</button>
+            </div>
+            <div class="dialmovements">
+                <div class="dialmovement" data-category="movement" data-value="none">None (Blank)</div>
+                <div class="dialmovement" data-category="movement" data-value="NH35three">NH35 / NH34 ( 3 o'clock )</div>
+                <div class="dialmovement" data-category="movement" data-value="NH35six">NH35 / NH34 ( 6 o'clock )</div>
+                <div class="dialmovement" data-category="movement" data-value="NH36">NH36 ( day-date )</div>
+                <div class="dialmovement" data-category="movement" data-value="8285">Miyota 8285 ( day-date )</div>
+                <div class="dialmovement" data-category="movement" data-value="custom">Custom Movement</div>
+                <div class="customMovementSection" style="display: none;">
+                    <label for="customMovement">Movement Name:</label>
+                    <textarea id="customMovement" class="movementInput" placeholder="Enter Name of Movement"></textarea>
+                    <button id="saveCustomMovement" class="saveButton">Save and Continue</button>
+                </div>
+            </div>
+    <!-- Dial Colors -->            
+            <div class="dialcolorstitles">
+                <button class="dialcolorstitle">Choose Your Dial Color</button>
+            </div>
+            <div class="dialcolors">
+                <div class="dialcolor" data-category="color" data-value="black">
+                    <span class="dialcolorText">Black</span>
+                    <img src="./img/black.png" alt="Black Color" class="dialcolorImage">
+                </div>
+                <div class="dialcolor" data-category="color" data-value="blue">
+                    <span class="dialcolorText">Blue</span>
+                    <img src="./img/blue.png" alt="Blue Color" class="dialcolorImage">
+                </div>
+                <div class="dialcolor" data-category="color" data-value="white">
+                    <span class="dialcolorText">White</span>
+                    <img src="./img/white.png" alt="White Color" class="dialcolorImage">
+                </div>
+            </div>
+    <!-- Dial Designs -->
+            <div class="dialdesignstitles">
+                <button class="dialdesignstitle">Choose Your Dial Design</button>
+            </div>
+            <div class="dialdesigns">
+                <div class="dialdesign" data-category="design" data-value="none">
+                    <span class="dialdesignText">No Design</span>
+                    <img src="./img/design1.png" alt="None" class="dialdesignImage">
+                </div>
+                <div class="dialdesign" data-category="design" data-value="hexagon">
+                    <span class="dialdesignText">Hexagon Design</span>
+                    <img src="./img/design2.png" alt="Hexagon Design" class="dialdesignImage">
+                </div>
+                <div class="dialdesign" data-category="design" data-value="spiral">
+                    <span class="dialdesignText">Circle Design</span>
+                    <img src="./img/design3.png" alt="Spiral Design" class="dialdesignImage">
+                </div>
+            </div>
+    <!-- Dial Indicies -->
+            <div class="dialindiciestitles">
+                <button class="dialindiciestitle">Choose Your Preferred Index</button>
+            </div>
+            <div class="dialindicies">
+                <div class="dialindex" data-category="index" data-value="none">
+                    <span class="dialindexText">No Index</span>
+                    <img src="./img/indexnone.png" alt="No Indices" class="dialindexImage">
+                </div>
+                <div class="dialindex" data-category="index" data-value="roman">
+                    <span class="dialindexText">Roman</span>
+                    <img src="./img/roman.png" alt="Roman Indices" class="dialindexImage">
+                </div>
+                <div class="dialindex" data-category="index" data-value="numerical">
+                    <span class="dialindexText">Numerical</span>
+                    <img src="./img/numerical.png" alt="Numerical Indices" class="dialindexImage">
+                </div>
+            </div>
+            
+    <!-- Dial Logo & Text -->
+            <div class="diallogostitles">
+                <button class="diallogostitle">Add Your Logo & Customized Text</button>
+            </div>
+            <div class="diallogos">
+                
+                <h1 class="diallogoheader">Upper Logo</h1>
+                <div class="diallogoupload">
+                    <label for="upper-logo">Upload Your Custom Logo (SVG or PNG)</label>
+                    <input type="file" class="logo-upload" id="upper-logo" accept=".svg, .png">
+                    <div id="upper-logo-preview"></div>
+                </div>
+                
+
+                
+                <h1 class="diallogoheader">Upper Text</h1>
+                <div>
+                    <textarea id="uppertext" class="logotextarea" placeholder="Insert Text Here..."></textarea>
+                    <button class="textbutton">Add Text to Image!</button>
+                </div>
+
+
+                <h1 class="diallogoheader">Lower Logo</h1>
+                <div class="diallogoupload">
+                    <label for="lower-logo">Upload Your Custom Logo (SVG or PNG)</label>
+                    <input type="file" class="logo-upload" id="lower-logo" accept=".svg, .png">
+                    <div id="lower-logo-preview"></div>
+                </div>
+                
+                <h1 class="diallogoheader">Lower Text</h1>
+                <div>
+                    <textarea id="lowertext" class="logotextarea" placeholder="Insert Text Here..."></textarea>
+                    <button class="textbutton">Add Text to Image!</button>
+                </div>
+
+                
+            </div>
+    
+    <!-- Add to Cart Button -->
+            <button class="dialbutton">Add to Cart!</button>
+        </div>
+    </div>
+    
+    
+    <div class="dialpreviewBottom">
+        <h1 class="dialpreviewBottom">-</h1>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
