@@ -1,232 +1,930 @@
-<html lang="en">
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Rakhraj Dials</title>
-</head>
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-<body>
-
-    <nav>
-        <div class="navTop">
-            <div class="navItem">
-                <img src="./img/rakhrajdialslogo.png" height="100" alt="">
-            </div>
-        </div>
-        <div class="navBottom">
-            <h3 class="menuItem">Custom Dials</h3>
-        </div>
-    </nav>
-
-    <div class="banner">
-        <div class="bannerContent">
-            <div class="bannerText">
-                <h1 class="bannerTitle">Customized <br> Laser-Annealed<br>Titanium Watch Dials</h1>
-                <h2 class="bannerPrice">Now Only <br> $129.99!</h2>
-                <button class="buyButton">Customize Yours Today!</button>
-            </div>
-            <img src="./img/banner1.png" alt="" class="bannerImage">
-        </div>
-    </div>
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
         
-    <div class="features">
-        <div class="feature">
-            <img src="./img/shipping.png" alt="" class="featureImage">
-            <span class="featureTitle">Free Shipping!</span>
-            <span class="featureDescription">Free Worldwide Shipping on all orders above $300.</span>
-        </div>
-        <div class="feature">
-            <img src="./img/return.png" alt="" class="featureImage">
-            <span class="featureTitle">30 Day Returns!</span>
-            <span class="featureDescription">No questions asked returns and refunds within 30 days.</span>
-        </div>
-        <div class="feature">
-            <img src="./img/gift.png" alt="" class="featureImage">
-            <span class="featureTitle">Perfect for Gifting!</span>
-            <span class="featureDescription">Surprise Your Closed Ones with a Personalized Watch Dial.</span>
-        </div>
-        <div class="feature">
-            <img src="./img/contact.png" alt="" class="featureImage">
-            <span class="featureTitle">Contact Us!</span>
-            <span class="featureDescription">Please Keep in Touch via Email and our Support System.</span>
-        </div>
-    </div>
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-    <div class="dialcustomizationtitle">
-        <h1 class="dialTitle">Customize Your Watch Dial!</h1>
-        <h2 class="dialPrice">Starting at $129.99</h2>
-        <p class="dialDescription">Choose your Perfect Comination of Dial Color & Hour / Minute Indicies, With the
-            Option of Customized Logos for Every Occasion.</p>
-    </div>
-    
-    <div class="dialPreviewTop">
-        <h1 class="dialPreviewTop">-</h1>
-    </div>
+        <title>Harkirat Rakhraj Portfolio Website</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <div class="nav__resume">
+                    <i class="ri-file-download-line" id="resume-button"></i>  
+                </div>
 
-    <div class="dialPreviewContainer">
-<!-- Dial Preview -->
-        <div class="dialPreview">
-            <img id="dialBaseImage" src="./img/dial1.png" alt="Dial Preview" class="dialImage">
-            <img id="dialMovementOverlay" src="" alt="" class="dialOverlay" style="display:none;">
-            <img id="dialDesignOverlay" src="" alt="" class="dialOverlay" style="display:none;">
-            <img id="dialIndexOverlay" src="" alt="" class="dialOverlay" style="display:none;">
-            <img id="dialCaseOverlay" src="./img/dialcase.png" alt="Dial Case Overlay" class="dialOverlay">
-        </div>
-        
-    
-<!-- Dial Customization Options -->
-        <div class="dialcustomization">
-    <!-- Dial Sizes -->
-            <div class="dialsizestitles">
-                <button class="dialsizestitle">Choose the Diameter of Your Watch Dial!</button>
-            </div>
-            <div class="dialsizes">
-                <button class="dialsize" data-category="size" data-value="36mm">36mm</button>
-                <button class="dialsize" data-category="size" data-value="41mm">41mm</button>
-                <button class="dialsize" data-category="size" data-value="custom">Custom Size</button>
-                <div class="customSizeSection" style="display: none;">
-                    <label for="dialDiameter">Dial Diameter ( 20 - 50 millimeters):</label>
-                    <div class="dialDiameterWrapper">
-                        <input type="number" id="dialDiameter" class="dialDiameterInput" placeholder="Enter size" min="20" max="50" step="0.1">
-                        <span>mm</span>
+                <div class="resume-popup" id="resume-popup">
+                    <div class="resume-popup-content">
+                        <p>Do You Want to View / Download My Resume?</p>
+                        <button id="resume-yes" class="popup-button">Yes</button>
+                        <button id="resume-no" class="popup-button">No</button>
                     </div>
-                
-                    <label for="additionalComments">Additional Comments:</label>
-                    <textarea id="additionalComments" class="commentsInput" placeholder="Add any details here..."></textarea>
-                
-                    <label for="uploadDialShape">Upload Dial Shape:</label>
-                    <input type="file" id="uploadDialShape" class="dialShapeUpload" accept=".jpg,.png,.svg">
-                
-                    <button id="saveCustomSize" class="saveButton">Save and Continue</button>
                 </div>
-                
-    <!-- Dial Movements -->
-            </div>
-            <div class="dialmovementstitles">
-                <button class="dialmovementstitle">Choose the Movement!</button>
-            </div>
-            <div class="dialmovements">
-                <div class="dialmovement" data-category="movement" data-value="none">None (Blank)</div>
-                <div class="dialmovement" data-category="movement" data-value="NH35three">NH35 / NH34 ( 3 o'clock )</div>
-                <div class="dialmovement" data-category="movement" data-value="NH35six">NH35 / NH34 ( 6 o'clock )</div>
-                <div class="dialmovement" data-category="movement" data-value="NH36">NH36 ( day-date )</div>
-                <div class="dialmovement" data-category="movement" data-value="8285">Miyota 8285 ( day-date )</div>
-                <div class="dialmovement" data-category="movement" data-value="custom">Custom Movement</div>
-                <div class="customMovementSection" style="display: none;">
-                    <label for="customMovement">Movement Name:</label>
-                    <textarea id="customMovement" class="movementInput" placeholder="Enter Name of Movement"></textarea>
-                    <button id="saveCustomMovement" class="saveButton">Save and Continue</button>
+
+                <a href="#" class="nav__logo">
+                    Harkirat Rakhraj
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list grid">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                <i class="ri-home-5-line"></i> Home
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class="ri-book-open-line"></i> About Me
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#skills" class="nav__link">
+                                <i class="ri-trophy-line"></i> Skills
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#qualifications" class="nav__link">
+                                <i class="ri-book-open-line"></i> Qualifications
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#projects" class="nav__link">
+                                <i class="ri-image-line"></i> Projects
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">
+                                <i class="ri-chat-3-line"></i> Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Close button -->
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
                 </div>
-            </div>
-    <!-- Dial Colors -->            
-            <div class="dialcolorstitles">
-                <button class="dialcolorstitle">Choose Your Dial Color</button>
-            </div>
-            <div class="dialcolors">
-                <div class="dialcolor" data-category="color" data-value="black">
-                    <span class="dialcolorText">Black</span>
-                    <img src="./img/black.png" alt="Black Color" class="dialcolorImage">
+
+                <div class="nav__buttons">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <!-- Toggle button -->
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-4-line"></i>
+                    </div>
                 </div>
-                <div class="dialcolor" data-category="color" data-value="blue">
-                    <span class="dialcolorText">Blue</span>
-                    <img src="./img/blue.png" alt="Blue Color" class="dialcolorImage">
+            </nav>
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="home__container container grid section__border">
+                    <div class="home__data grid">
+                        <div class="home__title">
+                            <h1 class="home-name">Harkirat Rakhraj<br></h1>
+                            <div class="home-slider">
+                                <h1 class="slider-option">Project Manager</h1>
+                                <h1 class="slider-option">Digital Consultant</h1>
+                                <h1 class="slider-option">Team Leader</h1>
+                                <h1 class="slider-option">Critical Thinker</h1>
+                                <h1 class="slider-option">Problem Solver</h1>
+                            </div>
+                        </div>
+
+                        <div class="home__blob grid">
+                            <div class="home__perfil">
+                                <img src="assets/img/harki.png" alt="">
+                            </div>
+
+                            <img src="assets/img/shape-wawes.svg" alt="" class="home__shape-wawes">
+                            <img src="assets/img/shape-circle.svg" alt="" class="home__shape-circle">
+                        </div>
+
+                        <ul class="home__social">
+                            <a href="https://www.linkedin.com/" target="_blank" class="home__social-link">
+                                <i class="ri-linkedin-box-line"></i>
+                            </a>
+
+                            <a href="https://github.com/" target="_blank" class="home__social-link">
+                                <i class="ri-github-line"></i>
+                            </a>
+
+                            <a href="https://dribbble.com/" target="_blank" class="home__social-link">
+                                <i class="ri-dribbble-line"></i>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <!--==================== HOME INFO 1 ====================-->
+                    <div class="home__info">
+                        <div>
+                            <h3 class="home__info-title">
+                                BIOGRAPHY
+                            </h3>
+                            
+                            <p class="home__info-description">
+                                Hi, I'm Harki, Biologist Turned 
+                                Project Manager. Passionate About 
+                                Understanding How Everything Works 
+                                And Solving Complex Problems
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="home__info-title">
+                                CONTACT
+                            </h3>
+
+                            <p class="home__info-description">
+                                harkirakh@gmail.com<br>
+                                +1-(647)-303-0262<br>
+                                London, ON<br>
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="home__info-title">
+                                EXPERTISE
+                            </h3>
+
+                            <p class="home__info-description">
+                                Project Management<br>
+                                Website Development <br>
+                                UI/UX Design <br>
+                                Animation <br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--==================== HOME INFO 2 ====================-->
+                    <div class="home__info">
+                        <div>
+                            <h3 class="home__info-title">
+                                YEARS OF EXPERIENCE
+                            </h3>
+
+                            <p class="home__info-number">
+                                05+
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="home__info-title">
+                                COMPLETED PROJECTS
+                            </h3>
+
+                            <p class="home__info-number">
+                                15+
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="home__info-title">
+                                COLLABORATED ORGANIZATIONS
+                            </h3>
+
+                            <p class="home__info-number">
+                                10+
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="dialcolor" data-category="color" data-value="white">
-                    <span class="dialcolorText">White</span>
-                    <img src="./img/white.png" alt="White Color" class="dialcolorImage">
-                </div>
-            </div>
-    <!-- Dial Designs -->
-            <div class="dialdesignstitles">
-                <button class="dialdesignstitle">Choose Your Dial Design</button>
-            </div>
-            <div class="dialdesigns">
-                <div class="dialdesign" data-category="design" data-value="none">
-                    <span class="dialdesignText">No Design</span>
-                    <img src="./img/design1.png" alt="None" class="dialdesignImage">
-                </div>
-                <div class="dialdesign" data-category="design" data-value="hexagon">
-                    <span class="dialdesignText">Hexagon Design</span>
-                    <img src="./img/design2.png" alt="Hexagon Design" class="dialdesignImage">
-                </div>
-                <div class="dialdesign" data-category="design" data-value="spiral">
-                    <span class="dialdesignText">Circle Design</span>
-                    <img src="./img/design3.png" alt="Spiral Design" class="dialdesignImage">
-                </div>
-            </div>
-    <!-- Dial Indicies -->
-            <div class="dialindiciestitles">
-                <button class="dialindiciestitle">Choose Your Preferred Index</button>
-            </div>
-            <div class="dialindicies">
-                <div class="dialindex" data-category="index" data-value="none">
-                    <span class="dialindexText">No Index</span>
-                    <img src="./img/indexnone.png" alt="No Indices" class="dialindexImage">
-                </div>
-                <div class="dialindex" data-category="index" data-value="roman">
-                    <span class="dialindexText">Roman</span>
-                    <img src="./img/roman.png" alt="Roman Indices" class="dialindexImage">
-                </div>
-                <div class="dialindex" data-category="index" data-value="numerical">
-                    <span class="dialindexText">Numerical</span>
-                    <img src="./img/numerical.png" alt="Numerical Indices" class="dialindexImage">
-                </div>
-            </div>
+            </section>
+
+            <!-- About Me Section -->
+            <section class="about section" id="about">
+                <h2 class="section__title">About Me</h2>
+                <span class="section__subtitle">Innovative. Empathetic. Results-Driven.</span>
             
-    <!-- Dial Logo & Text -->
-            <div class="diallogostitles">
-                <button class="diallogostitle">Add Your Logo & Customized Text</button>
+                <div class="about__container container grid section__border">
+                    <!-- Top Row: Who I Am and Why Choose Me -->
+                    <div class="about__row">
+                        <div class="about__content about__who">
+                            <h3 class="about__title">Who I Am</h3>
+                            <p class="about__description">
+                                A forward-thinking project manager with a passion for blending technology and strategy to drive meaningful change. Known for empathetic leadership, I excel in transforming complex challenges into innovative solutions that enhance productivity, reduce costs, and improve outcomes.
+                            </p>
+                        </div>
+            
+                        <div class="about__content about__why right-align">
+                            <h3 class="about__title" id="why">Why Choose Me?</h3>
+                            <p class="about__description">
+                                I bring a unique mix of analytical problem-solving, adaptability, and team empowerment to every project. My dedication to collaboration and continuous improvement ensures impactful results, whether it's streamlining operations or fostering creative breakthroughs.
+                            </p>
+                        </div>
+                    </div>
+            
+                    <!-- Bottom Row: About Me Cards -->
+                    <div class="about__highlights">
+                        <div class="about__card">
+                            <i class="ri-lightbulb-line"></i>
+                            <h2 class="about__title">Innovative Solutions</h2>
+                            <p class="about__description">
+                                Spearheaded AI and IoT integrations, boosting efficiency and delivering measurable impact.
+                            </p>
+                            <div class="about__border"></div>
+                        </div>
+            
+                        <div class="about__card">
+                            <i class="ri-team-line"></i>
+                            <h2 class="about__title">Empathetic Leadership</h2>
+                            <p class="about__description">
+                                Empowered diverse teams to exceed goals with strong communication and collaboration.
+                            </p>
+                            <div class="about__border"></div>
+                        </div>
+            
+                        <div class="about__card">
+                            <i class="ri-line-chart-line"></i>
+                            <h2 class="about__title">Data-Driven Success</h2>
+                            <p class="about__description">
+                                Leveraged analytics to optimize processes, saving time and driving organizational growth.
+                            </p>
+                            <div class="about__border"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+
+            <!--==================== SKILLS ====================-->
+            <section class="skills section" id="skills">
+                <h2 class="section__title">Skills</h2>
+                <span class="section__subtitle">My favorite skills</span>
+            
+                <div class="skills__container container grid section__border">
+                    <!--==================== SKILLS 1 ====================-->
+                    <div class="skills__content">
+                        <h3 class="skills__title">
+                            <i class="ri-folder-settings-line"></i> Project Management
+                        </h3>
+            
+                        <div class="skills__info">
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/jira.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Jira</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/asana.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Asana</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/trello.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Trello</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/smartsheet.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Smartsheet</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/ms-project.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">MS Project</h3>
+                                <span class="skills__subtitle">Basic</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/slack.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Slack</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--==================== SKILLS 2 ====================-->
+                    <div class="skills__content">
+                        <h3 class="skills__title">
+                            <i class="ri-pantone-line"></i> Web Design
+                        </h3>
+            
+                        <div class="skills__info">
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/figma.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Figma</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/adobe-xd.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Adobe XD</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/adobe-photoshop.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Photoshop</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/adobe-illustrator.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Illustrator</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/canva.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Canva</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/wix.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Wix</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--==================== SKILLS 3 ====================-->
+                    <div class="skills__content">
+                        <h3 class="skills__title">
+                            <i class="ri-braces-line"></i> Frontend Development
+                        </h3>
+            
+                        <div class="skills__info">
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/html.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">HTML</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/css.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">CSS</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/javascript.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">JavaScript</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/bootstrap.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Bootstrap</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/git-icon.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Git</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/react.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">React</h3>
+                                <span class="skills__subtitle">Basic</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--==================== SKILLS 4 ====================-->
+                    <div class="skills__content">
+                        <h3 class="skills__title">
+                            <i class="ri-database-line"></i> Backend Development
+                        </h3>
+            
+                        <div class="skills__info">
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/tableau.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Tableau</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/power-bi.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Power BI</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/aws.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">AWS</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/sql.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">SQL</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/python.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">Python</h3>
+                                <span class="skills__subtitle">Advanced</span>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__blob">
+                                    <img src="assets/img/skills/google-cloud.svg" alt="skills image">
+                                </div>
+                                <h3 class="skills__name">G-Cloud</h3>
+                                <span class="skills__subtitle">Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!--==================== QUALIFICATION ====================-->
+            <section class="qualification section" id="qualifications">
+                <h2 class="section__title">Qualifications</h2>
+                <span class="section__subtitle">Education & Certifications</span>
+
+                <div class="qualification__container container grid section__border">
+                    <!--==================== QUALIFICATION 1 ====================-->
+                    <div class="qualification__content">
+                        <h3 class="qualification__title education">
+                            <i class="ri-pencil-ruler-2-line"></i> Education <i class="ri-pencil-ruler-2-line"></i> 
+                        </h3>
+
+                        <div class="qualification__info education">
+                            <div>
+                                <h3 class="qualification__name">
+                                    Masters Of Science ( MSc )
+                                </h3>
+                                <h2 class="qualification__subname">
+                                    Management, Digital Management
+                                </h2>
+                                <span class="qualification__country">
+                                    Ivey Business School,<br>
+                                    Western University,<br>
+                                    London ON
+                                </span>
+                                <span class="qualification__year">
+                                    2022 - 2023
+                                </span>
+                            </div>
+
+                            <div>
+                                <h3 class="qualification__name">
+                                    Bachelors of Science ( BSc )
+                                </h3>
+                                <h2 class="qualification__subname">
+                                    Honors Specialization in Biology
+                                </h2>
+                                <span class="qualification__country">
+                                    Western University,<br>
+                                    London, ON,<br>
+                                    Dean's Honor List ( 2021, 2020, 2019 )
+                                </span>
+                                <span class="qualification__year">
+                                    2018 - 2022
+                                </span>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!--==================== QUALIFICATION 2 ====================-->
+                    <div class="qualification__content">
+                        <h3 class="qualification__title work-experience">
+                            <i class="ri-building-line"></i> Certifications <i class="ri-building-line"></i>
+                        </h3>
+
+                        <div class="qualification__info work-experience">
+                            <div>
+                                <h3 class="qualification__name">
+                                    Project Management <br> 
+                                    Professional ( PMP ) Certificate
+                                </h3>
+                                <span class="qualification__country">
+                                    Google,<br>
+                                    via Coursera
+                                </span>
+                                <span class="qualification__year">
+                                    <span style="font-style: italic;">
+                                        View Certificate
+                                    </span><br>
+                                    2023
+                                </span>
+                            </div>
+
+                            <div>
+                                <h3 class="qualification__name">
+                                    Project Management <br>
+                                    Professional ( PMP )
+                                </h3>
+                                <span class="qualification__country">
+                                    Project Management Institute ( PMI )
+                                </span>
+                                <span class="qualification__year">
+                                    Ongoing
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="assets/img/shape-circle.svg" alt="qualification image" class="qualification__img">
+            </section>
+
+            <!--==================== PROJECTS ====================-->
+            <section class="projects section" id="projects">
+                <h2 class="section__title">
+                    Work Experience
+                </h2>
+                <span class="section__subtitle">Most recent work</span>
+
+                <div class="container section__border">
+                    <div class="projects__container swiper">
+                        <div class="swiper-wrapper">
+
+                            <!--==================== PROJECT 1 ====================-->
+                            <div class="projects__content swiper-slide">
+                                <img src="assets/img/work/ivey.png" alt="projects image" class="projects__img">
+    
+                                <div>
+                                    <span class="projects__subtitle">
+                                        London, ON<br>
+                                        <span style="font-style: italic;">
+                                            06/23 - Present
+                                        </span>
+                                    </span>
+                                    <h1 class="projects__title">FormPro</h1>
+                                    <h3 class="projects__undertitle">Founder & <br> Project Manager</h3>
+                                    <a href="#" class="projects__button">
+                                        View more <i class="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--==================== PROJECT 2 ====================-->
+                            <div class="projects__content swiper-slide">
+                                <img src="assets/img/work/huron-perth.png" alt="projects image" class="projects__img">
+    
+                                <div>
+                                    <span class="projects__subtitle">
+                                        Stratford, ON<br>
+                                        <span style="font-style: italic;">
+                                            04/23 - 11/23
+                                        </span>
+                                    </span>
+                                    <h1 class="projects__title">Huron Perth <br> Healthcare Alliance</h1>
+                                    <h3 class="projects__undertitle">Implementation Specialist</h3>
+                                    <a href="#" class="projects__button">View more <i class="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--==================== PROJECT 3 ====================-->
+                            <div class="projects__content swiper-slide">
+                                <img src="assets/img//work/st-johns.png" alt="projects image" class="projects__img">
+    
+                                <div>
+                                    <span class="projects__subtitle">
+                                        London, ON<br>
+                                        <span style="font-style: italic;">
+                                            04/23 - 09/23
+                                        </span>
+                                    </span>
+                                    <h1 class="projects__title">St. John Ambulance</h1>
+                                    <h3 class="projects__undertitle">Project Consultant</h3>
+                                    <a href="#" class="projects__button">View more <i class="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </div>                            
+    
+                            <!--==================== PROJECT 4 ====================-->
+                            <div class="projects__content swiper-slide">
+                                <img src="assets/img/work/sick-kids.png" alt="projects image" class="projects__img">
+    
+                                <div>
+                                    <span class="projects__subtitle">
+                                        Toronto, ON<br>
+                                        <span style="font-style: italic;">
+                                            04/23 - 09/23
+                                        </span>
+                                    </span>
+                                    <h1 class="projects__title">SickKids Hosiptal</h1>
+                                    <h3 class="projects__undertitle">Digital Consultant</h3>
+                                    <a href="#" class="projects__button">View more <i class="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+    
+                            <!--==================== PROJECT 5 ====================-->
+                            <div class="projects__content swiper-slide">
+                                <img src="assets/img/work/cibc.png" alt="projects image" class="projects__img">
+    
+                                <div>
+                                    <span class="projects__subtitle">
+                                        Toronto, ON<br>
+                                        <span style="font-style: italic;">
+                                            04/23 - 09/23
+                                        </span>
+                                    </span>
+                                    <h1 class="projects__title">CIBC</h1>
+                                    <h3 class="projects__undertitle">Digital Project Analyst</h3>
+                                    <a href="#" class="projects__button">View more <i class="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+    
+                            <!--==================== PROJECT 6 ====================-->
+                            <div class="projects__content swiper-slide">
+                                <img src="assets/img/work/sysco.png" alt="projects image" class="projects__img">
+    
+                                <div>
+                                    <span class="projects__subtitle">
+                                        London, ON <br> 
+                                        <span style="font-style: italic;">
+                                            01/23 - 04/23
+                                        </span>
+                                    </span>
+                                    <h1 class="projects__title">Digital Consultant Intern</h1>
+                                    <h3 class="projects__undertitle">Sysco Canada</h3>
+                                    <a href="#" class="projects__button">View more <i class="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--==================== PROJECT 7 ====================-->
+                            <div class="projects__content swiper-slide">
+                                <img src="assets/img/work/reforest-london.png" alt="projects image" class="projects__img">
+    
+                                <div>
+                                    <span class="projects__subtitle">
+                                        London, ON<br>
+                                        <span style="font-style: italic;">
+                                            06/19 - 08/22
+                                        </span>
+                                    </span>
+                                    <h1 class="projects__title">ReForest London</h1>
+                                    <h3 class="projects__undertitle">Project Coordinator</h3>
+                                    <a href="#" class="projects__button">View more <i class="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </div>                            
+                        </div>
+    
+                        <!-- Swiper arrows -->
+                        <div class="swiper-button-next">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </div>
+    
+                        <div class="swiper-button-prev">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </div>
+    
+                        <!-- Swiper pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== TESTIMONIAL ====================-->
+            <section class="testimonial section">
+                <h2 class="section__title">Testimonial</h2>
+                <span class="section__subtitle">My client saying</span>
+
+                <div class="container section__border">
+                    <div class="testimonial__container swiper">
+                        <div class="swiper-wrapper">
+                            <!--==================== TESTIMONIAL 1 ====================-->
+                            <div class="testimonial__content swiper-slide">
+                                <p class="testimonial__description">
+                                    “Working with Chris is to give a good 
+                                    impression, I carry out my project at a good 
+                                    cost, with excellent quality and attention. 
+                                    Great service and recommended.”
+                                </p>
+    
+                                <div>
+                                    <h3 class="testimonial__name">Klay Harris</h3>
+                                    <span class="testimonial__subtitle">Client</span>
+                                </div>
+                            </div>
+    
+                            <!--==================== TESTIMONIAL 2 ====================-->
+                            <div class="testimonial__content swiper-slide">
+                                <p class="testimonial__description">
+                                    “Working with Chris is to give a good 
+                                    impression, I carry out my project at a good 
+                                    cost, with excellent quality and attention. 
+                                    Great service and recommended.”
+                                </p>
+    
+                                <div>
+                                    <h3 class="testimonial__name">Mary Lens</h3>
+                                    <span class="testimonial__subtitle">Client</span>
+                                </div>
+                            </div>
+    
+                            <!--==================== TESTIMONIAL 3 ====================-->
+                            <div class="testimonial__content swiper-slide">
+                                <p class="testimonial__description">
+                                    “Working with Chris is to give a good 
+                                    impression, I carry out my project at a good 
+                                    cost, with excellent quality and attention. 
+                                    Great service and recommended.”
+                                </p>
+    
+                                <div>
+                                    <h3 class="testimonial__name">Anna Chel</h3>
+                                    <span class="testimonial__subtitle">Client</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Swiper arrows -->
+                        <div class="swiper-button-next">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </div>
+    
+                        <div class="swiper-button-prev">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="assets/img/shape-wawes.svg" alt="" class="testimonial__img">
+            </section>
+
+            <!--==================== CONTACT ====================-->
+            <section class="contact section" id="contact">
+                <h2 class="section__title">Contact Me</h2>
+                <span class="section__subtitle">Get in touch</span>
+
+                <div class="contact__container container grid section__border">
+                    <div class="contact__content">
+                        <h3 class="contact__title">
+                            <i class="ri-chat-3-line"></i> Talk to me
+                        </h3>
+
+                        <div class="contact__info">
+                            <div class="contact__data">
+                                <span class="contact__data-title">Email</span>
+                                <span class="contact__data-info">chrismayer@email.com</span>
+                            </div>
+
+                            <div class="contact__data">
+                                <span class="contact__data-title">Whatsapp</span>
+                                <span class="contact__data-info">+51 9876543210</span>
+                                <!-- Insert a real number plus country code -->
+                                <a href="https://api.whatsapp.com/send?phone=519876543210&text=Hello, more information!" target="_blank" class="contact__button">
+                                    Write me <i class="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+
+                            <div class="contact__data">
+                                <span class="contact__data-title">Messenger</span>
+                                <span class="contact__data-info">@chris.fb123</span>
+                                <!-- Insert your brand name or profile -->
+                                <a href="https://m.me/bedimcode" target="_blank" class="contact__button">
+                                    Write me <i class="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__content">
+                        <h3 class="contact__title">
+                            <i class="ri-send-plane-line"></i> Write me your project
+                        </h3>
+
+                        <form action="" class="contact__form" id="contact-form">
+                            <div class="contact__form-div">
+                                <label class="contact__form-tag">Names</label>
+                                <input type="text" name="user_name" required placeholder="Write your names" class="contact__form-input" id="contact-name">
+                            </div>
+
+                            <div class="contact__form-div">
+                                <label class="contact__form-tag">Mail</label>
+                                <input type="email" name="user_email" required placeholder="Write your email" class="contact__form-input" id="contact-email">
+                            </div>
+
+                            <div class="contact__form-div contact__form-area">
+                                <label class="contact__form-tag">Project</label>
+                                <textarea name="user_project" placeholder="Write your project" class="contact__form-input" id="contact-project"></textarea>
+                            </div>
+
+                            <p class="contact__message" id="contact-message"></p>
+
+                            <button type="submit" class="contact__button">
+                                Submit <i class="ri-arrow-right-up-line"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+            <div class="footer__container container">
+                <h1 class="footer__title">Chris</h1>
+                <p>Frontend Developer</p>
+
+                <ul class="footer__list">
+                    <li>
+                        <a href="#home" class="footer__link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="footer__link">Projects</a>
+                    </li>
+                </ul>
+
+                <ul class="footer__social">
+                    <a href="https://www.linkedin.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-linkedin-box-line"></i>
+                    </a>
+
+                    <a href="https://github.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-github-line"></i>
+                    </a>
+
+                    <a href="https://dribbble.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-dribbble-line"></i>
+                    </a>
+                </ul>
+
+                <span class="footer__copy">
+                    &#169; Copyright Bedimcode. All rights reserved
+                </span>
             </div>
-            <div class="diallogos">
-                
-                <h1 class="diallogoheader">Upper Logo</h1>
-                <div class="diallogoupload">
-                    <label for="upper-logo">Upload Your Custom Logo (SVG or PNG)</label>
-                    <input type="file" class="logo-upload" id="upper-logo" accept=".svg, .png">
-                    <div id="upper-logo-preview"></div>
-                </div>
-                
-
-                
-                <h1 class="diallogoheader">Upper Text</h1>
-                <div>
-                    <textarea id="uppertext" class="logotextarea" placeholder="Insert Text Here..."></textarea>
-                    <button class="textbutton">Add Text to Image!</button>
-                </div>
+        </footer>
 
 
-                <h1 class="diallogoheader">Lower Logo</h1>
-                <div class="diallogoupload">
-                    <label for="lower-logo">Upload Your Custom Logo (SVG or PNG)</label>
-                    <input type="file" class="logo-upload" id="lower-logo" accept=".svg, .png">
-                    <div id="lower-logo-preview"></div>
-                </div>
-                
-                <h1 class="diallogoheader">Lower Text</h1>
-                <div>
-                    <textarea id="lowertext" class="logotextarea" placeholder="Insert Text Here..."></textarea>
-                    <button class="textbutton">Add Text to Image!</button>
-                </div>
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class="ri-arrow-up-line"></i>
+        </a>
 
-                
-            </div>
-    
-    <!-- Add to Cart Button -->
-            <button class="dialbutton">Add to Cart!</button>
-        </div>
-    </div>
-    
-    
-    <div class="dialpreviewBottom">
-        <h1 class="dialpreviewBottom">-</h1>
-    </div>
-    <script src="./app.js"></script>
-</body>
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
 
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        
+        <!--=============== EMAIL JS ===============-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
